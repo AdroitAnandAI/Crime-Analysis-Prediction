@@ -244,7 +244,7 @@ Lets evaluate the above observations by building Linear Regression Models, as it
 
 ![mcf](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/mcf.PNG)
 
-Interim Observations:
+**Interim Observations:**
 
 a) As the p-value of density is 0 (small), the changes in crime rate has got close relation with changes in density.
 
@@ -256,7 +256,7 @@ c) Co-effient estimate of 0.0086 indicates one value increase of density would c
 
 ![2cf](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/2cf.PNG)
 
-Interim Observations:
+**Interim Observations:**
 
 a) **R-squared value is found to be slightly higher (0.527)** when the variable, 'urban' is coupled with density as predictor variables. But, R Squared always goes up when you add more variables regardless of whether the added variable help in prediction or not.
 
@@ -288,7 +288,7 @@ Thus, **the model has become more less reliable to explain crime rate**, because
 
 ![rml4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml4.PNG)
 
-Interim Observations:
+**Interim Observations:**
 
 a) **Adj. R-squared improved** from 0.825 in all-feature model to 0.830, after removal of 2 features 'urban', 'county'.
 
@@ -302,7 +302,7 @@ Thus, **we have a better model than the all-feature model**. We will try to remo
 
 ![rml7](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml7.PNG)
 
-Interim Observations:
+**Interim Observations:**
 
 a) **Adj. R-squared of the above model with 8 features dropped is better** than the all-feature model.
 
@@ -343,8 +343,6 @@ The lowest cross validation MSE is for wloc, wtrd, prbconv and wcon. Thus, in ad
 
 ![fm3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm3.PNG)
 
-## Testing the Model on Input Data
-
 ## Conclusion
 
 1. The Actual vs Predicted plot is linear. This signifies the prediction is working fine. The input data set is limited. With more data, the plot could be more linear.
@@ -352,7 +350,3 @@ The lowest cross validation MSE is for wloc, wtrd, prbconv and wcon. Thus, in ad
 2. As an improvement, we can combine the boolean features: west, central and urban into a single feature with categorical values 1, 2 & 3.. Such a feature can help aid the prediction.
 
 3. If there is a chance to add features, then it might be helpful to get 'unemployment rate'.
-
-
-
-
