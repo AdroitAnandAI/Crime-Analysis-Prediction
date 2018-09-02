@@ -146,9 +146,9 @@ Many times, more than one input could be dependent on each other. In Linear Regr
 
 When a feature is dependent on one or more of the other input features, it leads to a phenomenon known as multi-collinearity. **Multi-collinearity among features can be identified by doing Feature-Feature correlation analysis**.
 
-![hm1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/hm1.PNG)
+![hm1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/hm1.png)
 
-![hm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/hm2.PNG)
+![hm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/hm2.png)
 
 ## Conclusions
 
