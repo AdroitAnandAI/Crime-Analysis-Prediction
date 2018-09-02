@@ -209,3 +209,109 @@ It is found, that **some rows have to be dropped** before doing regression analy
 6. Wage columns, wfed & wtrd are positively correlated to 'density' feature. This can be intuitively understood as the weekly wages would be higher in urban areas.
 
 ### The above observations from EDA would be carried forward to help Linear Regression (Part II).
+
+**==========================================**
+
+# Linear Model on North Carolina Crime Rate Dataset (Part II)
+
+## Objective
+
+To use insights from EDA to develop a suitable **linear model with crmrte as the dependent variable** and explain the various aspects of the model.
+
+## Actionable Observations from EDA
+
+1) The density and urban variable has highest correlation with crime rate.
+
+2) But, density and urban variable seems to be highly correlated, which is obvious, because urban areas are densely populated. Hence, there is a high chance of multicollinearity between density and urban features. We wll use linear regression to sort out this question.
+
+3) The feature, 'urban' has a correlation of 0.62 with crime rate, but whether the correlation is because 'urban' has very high correlation with 'density' is yet to be known.
+
+4) A combination of density and urban (or west or central) can help aid crime rate prediction.
+
+5) Wage columns, wfed & wtrd are positively correlated to 'density' feature. This can be intuitively understood as the weekly wages would be higher in urban areas.
+
+6) Some of the "wage features" are positively correlated, as the wage increase/ decrease in one domain would certainly influence the other.
+
+7) wtrd & wfir are positively correlated to wfed & wloc. Also, wfir and wtrd have moderate correlation with each other.
+
+8) There are 6 strongly correlated values with Crime Rate: crmrte, density, urban, wfed, taxpc, wtrd.
+
+## Evaluate Observations using Linear Regression Model
+
+Lets evaluate the above observations by building Linear Regression Models, as it helps to understand the relation between variables better.
+
+### Creating Model with Most Correlated Feature
+
+![mcf](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/mcf.png)
+
+### Creating Model with Top 2 Correlated Features
+
+![2cf](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/2cf.png)
+
+Thus, **the model has become more less reliable to explain crime rate**, because the feature 'urban' doesnt contribute to prediction. The confusion about the correlation between 'urban' and 'density' variable during EDA step, has been sorted out.
+
+**Note:** If we add variables that are not meaningful as predictor, then it **would cause 'Overfitting'**. Then, prediction model would perform great with the training data but not with the real world data.
+
+## Multiple Linear Regression: Model with all Features
+
+![ml1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml1.png)
+
+![ml2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml2.png)
+
+![ml3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml3.png)
+
+![ml4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml4.png)
+
+## Removing features from all-feature Model
+
+![rml1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml1.png)
+
+![rml2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml2.png)
+
+![rml3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml3.png)
+
+![rml4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml4.png)
+
+Thus, **we have a better model than the all-feature model**. We will try to remove more features and analyze the model indicators.
+
+![rml5](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml5.png)
+
+![rml6](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml6.png)
+
+![rml7](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml7.png)
+
+Thus, **we have a better model than the all-feature model** by removing more features such as 'wmfg', 'prbpris', 'wloc', 'west', 'wtuc'. We will try to remove even more features with p > 0.05 and evaluate using RMSE.
+
+## Model Evaluation Using Cross Validation & RMSE
+
+We will test the change in RMSE value when the features with p > 0.05 are removed. The features with p > 0.05 are prbconv, mix, wfed, wtrd, wcon & avgsen. We will also check the RMSE values for the features removed in the previous model.
+
+![rmse](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rmse.png)
+
+![cv](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/cv.png)
+
+From the bar chart, the RMSE values performs better than 'None' when wtuc, wtrd, wloc, west, wmfg and avgsen are removed. Thus, in addition to the previous model, **wtrd & avgsen features are removed**. But the R-squared and AIC figures degrade when both the features are removed. Since wtrd has a higher p value, **we will remove wtrd in our model**.
+
+The lowest cross validation MSE is for wloc, wtrd, prbconv and wcon. Thus, in addition to the previous exclusions, prbconv & wcon also can be dropped. But removal of either feature would increase the RMSE value as per the above plot. Thus, we will remove only wtrd in our model.
+
+## OLS Regression Characteristic of Final Model
+
+![fm1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm1.png)
+
+![fm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm2.png)
+
+![fm3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm3.png)
+
+## Testing the Model on Input Data
+
+## Conclusion
+
+1. The Actual vs Predicted plot is linear. This signifies the prediction is working fine. The input data set is limited. With more data, the plot could be more linear.
+
+2. As an improvement, we can combine the boolean features: west, central and urban into a single feature with categorical values 1, 2 & 3.. Such a feature can help aid the prediction.
+
+3. If there is a chance to add features, then it might be helpful to get 'unemployment rate'.
+
+
+
+
