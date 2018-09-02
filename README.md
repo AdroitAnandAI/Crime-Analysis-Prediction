@@ -1,9 +1,11 @@
 # Crime Analysis Prediction
-Linear Model to predict the crime rate of North Carolina. Detailed EDA done prior to building model
+
+Linear Model to predict the crime rate of North Carolina. Detailed EDA done prior to building the model.
 
 ## Data Description
 
-The dataset contains the data for crime rate in the state of North Carolina aggregated by county.
+The dataset contains the data for crime rate in the state of North Carolina aggregated by county. <br/>
+Data source: https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/crime_v2.csv
 
 ## Data Attributes
 
@@ -35,44 +37,108 @@ The dataset contains the data for crime rate in the state of North Carolina aggr
 
 ## Objective
 
-1. To do a univariate and bivariate exploratory analysis of data and report the findings. 
-2. To develop a suitable linear model with crmrte as the dependent variable and explain the various aspects of the model.
+1. To perform **univariat**e and **bivariate exploratory analysis** of the dataset provided.
+2. To develop a suitable **linear model with crmrte as the dependent variable** based on the EDA findings.
+3. To explain the various aspects of the model used.
+
+## Data Analysis & Data Cleaning
+
+1. **The last row was getting read as 'object' data. It was found to be due to the special symbol at the last row, last column 0.074198931'**. Removed the special symbol from input csv file, to fix it.
+
+2. It is to be noted that the **maximum value of probability features, prbarr & prbconv, are > 1** which is a data anomaly. prbpris & pctymle are found to be < 1.
+
+3. There are 91 entries for all the 25 columns. Hence, there is **no missing value in the input dataset. Thus, no need to do data imputation** or to drop any feature.
+
+4. The zeros for features, west, central and urban are expected, as the data is inherently boolean.
 
 ## Univariate Analysis
 
 Univariate visualization   provides summary statistics for each field in the raw data set. It is conducted **to find out how much a single feature in the dataset** would be helpful to determine the target feature, here in this case, crime rate.
 
-uva img
-unvf
+![uva](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/uva.PNG)
+
+![uvaf1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/uvaf1.PNG)
+
+![uvaf2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/uvaf2.PNG)
+
+![uvaf3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/uvaf3.PNG)
+
 
 ## Probability/ Cumulative Distribution Function (CDF)
 
+![cdf1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/cdf1.PNG)
+
+![cdf2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/cdf2.PNG)
+
 ## Bivariate Analysis
 
-Bivariate visualization is performed to find the relationship between each variable in the dataset and the target variable of interest, i.e. crime rate.
+Bivariate visualization is performed to find the relationship between each variable in the dataset and the target variable of interest, i.e. crime rate. The plot of all features against crime rate is done as below.
 
-biv1
-biv2
+![biv1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/biv1.PNG)
+
+![biv2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/biv2.PNG)
 
 ## correlation among features for each location: 'west', 'central' & 'urban'
 
-fcp1-5
-fcpc
-fcpu
+Lets try to find if there is any correlation among features for each location: 'west', 'central' & 'urban'.
+
+Number of data points in category: west is 23
+Number of data points in category: central is 34
+Number of data points in category: urban is 8
+
+**Location: west**
+
+![fcp1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcp1.PNG)
+
+![fcp2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcp2.PNG)
+
+![fcp3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcp3.PNG)
+
+![fcp4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcp4.PNG)
+
+![fcp5](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcp5.PNG)
+
+**Location: central**
+
+![fcpc1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcpc1.PNG)
+
+![fcpc2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcpc2.PNG)
+
+![fcpc3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcpc3.PNG)
+
+![fcpc4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcpc4.PNG)
+
+![fcpc5](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcpc5.PNG)
+
+**Location: urban**
+
+![fcpu1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcpu1.PNG)
+
+![fcpu2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcpu2.PNG)
+
+![fcpu3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcpu3.PNG)
+
+![fcpu4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcpu4.PNG)
+
+![fcpu5](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcpu5.PNG)
 
 ## Linear Regression Fit of Strongly Correlated Features
 
 We have a lot of features to analyse in the input dataset. So let's take the strongly correlated quantitative features from this dataset and analyse them one by one.
 
-cf1-2
+![cf1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/cf1.PNG)
+
+![cf2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/cf2.PNG)
 
 ## Box Plots
 
-bp
+Let's do the box plot & violin plot for the boolean features 'west', 'central', 'urban' to find impact on crime rate, if any.
+
+![bp](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/bp.PNG)
 
 ## Violin Plots
 
-vp
+![vp](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/vp.PNG)
 
 ## Feature-Feature Correlation Analysis
 
@@ -80,7 +146,9 @@ Many times, more than one input could be dependent on each other. In Linear Regr
 
 When a feature is dependent on one or more of the other input features, it leads to a phenomenon known as multi-collinearity. **Multi-collinearity among features can be identified by doing Feature-Feature correlation analysis**.
 
-img 1-2
+![hm1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/hm1.png)
+
+![hm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/hm2.png)
 
 ## Conclusions
 
