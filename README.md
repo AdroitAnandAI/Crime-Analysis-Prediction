@@ -78,7 +78,7 @@ Bivariate visualization is performed to find the relationship between each var
 
 ![biv2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/biv2.PNG)
 
-## correlation among features for each location: 'west', 'central' & 'urban'
+## Correlation among features for each location: 'west', 'central' & 'urban'
 
 Lets try to find if there is any correlation among features for each location: 'west', 'central' & 'urban'.
 
