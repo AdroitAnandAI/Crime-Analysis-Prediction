@@ -210,7 +210,7 @@ It is found, that **some rows have to be dropped** before doing regression analy
 
 ### The above observations from EDA would be carried forward to help Linear Regression (Part II).
 
-**================================================================================**
+**===============================================================================**
 
 # Linear Model on North Carolina Crime Rate Dataset (Part II)
 
