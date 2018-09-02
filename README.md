@@ -242,11 +242,11 @@ Lets evaluate the above observations by building Linear Regression Models, as it
 
 ### Creating Model with Most Correlated Feature
 
-![mcf](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/mcf.png)
+![mcf](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/mcf.PNG)
 
 ### Creating Model with Top 2 Correlated Features
 
-![2cf](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/2cf.png)
+![2cf](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/2cf.PNG)
 
 Thus, **the model has become more less reliable to explain crime rate**, because the feature 'urban' doesnt contribute to prediction. The confusion about the correlation between 'urban' and 'density' variable during EDA step, has been sorted out.
 
@@ -254,31 +254,31 @@ Thus, **the model has become more less reliable to explain crime rate**, because
 
 ## Multiple Linear Regression: Model with all Features
 
-![ml1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml1.png)
+![ml1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml1.PNG)
 
-![ml2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml2.png)
+![ml2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml2.PNG)
 
-![ml3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml3.png)
+![ml3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml3.PNG)
 
-![ml4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml4.png)
+![ml4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml4.PNG)
 
 ## Removing features from all-feature Model
 
-![rml1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml1.png)
+![rml1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml1.PNG)
 
-![rml2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml2.png)
+![rml2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml2.PNG)
 
-![rml3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml3.png)
+![rml3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml3.PNG)
 
-![rml4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml4.png)
+![rml4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml4.PNG)
 
 Thus, **we have a better model than the all-feature model**. We will try to remove more features and analyze the model indicators.
 
-![rml5](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml5.png)
+![rml5](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml5.PNG)
 
-![rml6](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml6.png)
+![rml6](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml6.PNG)
 
-![rml7](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml7.png)
+![rml7](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml7.PNG)
 
 Thus, **we have a better model than the all-feature model** by removing more features such as 'wmfg', 'prbpris', 'wloc', 'west', 'wtuc'. We will try to remove even more features with p > 0.05 and evaluate using RMSE.
 
@@ -286,9 +286,9 @@ Thus, **we have a better model than the all-feature model** by removing more fea
 
 We will test the change in RMSE value when the features with p > 0.05 are removed. The features with p > 0.05 are prbconv, mix, wfed, wtrd, wcon & avgsen. We will also check the RMSE values for the features removed in the previous model.
 
-![rmse](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rmse.png)
+![rmse](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rmse.PNG)
 
-![cv](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/cv.png)
+![cv](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/cv.PNG)
 
 From the bar chart, the RMSE values performs better than 'None' when wtuc, wtrd, wloc, west, wmfg and avgsen are removed. Thus, in addition to the previous model, **wtrd & avgsen features are removed**. But the R-squared and AIC figures degrade when both the features are removed. Since wtrd has a higher p value, **we will remove wtrd in our model**.
 
@@ -296,11 +296,11 @@ The lowest cross validation MSE is for wloc, wtrd, prbconv and wcon. Thus, in ad
 
 ## OLS Regression Characteristic of Final Model
 
-![fm1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm1.png)
+![fm1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm1.PNG)
 
-![fm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm2.png)
+![fm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm2.PNG)
 
-![fm3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm3.png)
+![fm3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm3.PNG)
 
 ## Testing the Model on Input Data
 
