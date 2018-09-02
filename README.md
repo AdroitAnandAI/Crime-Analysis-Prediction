@@ -1,9 +1,13 @@
 # Crime Analysis Prediction
-Linear Model to predict the crime rate of North Carolina. Detailed EDA done prior to building model
+
+1. To perform univariate and bivariate exploratory analysis of the dataset provided.
+2. To carry forward the findings for developing a suitable linear model with crmrte as the dependent variable.
+3. To explain the various aspects of the model used.
 
 ## Data Description
 
-The dataset contains the data for crime rate in the state of North Carolina aggregated by county.
+The dataset contains the data for crime rate in the state of North Carolina aggregated by county. 
+Data source: https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/crime_v2.csv
 
 ## Data Attributes
 
