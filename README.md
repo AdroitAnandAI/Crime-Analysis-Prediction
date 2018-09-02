@@ -244,9 +244,25 @@ Lets evaluate the above observations by building Linear Regression Models, as it
 
 ![mcf](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/mcf.PNG)
 
+Interim Observations:
+
+a) As the p-value of density is 0 (small), the changes in crime rate has got close relation with changes in density.
+
+b) R-squared value is found to be 0.525 with only density as predictor variable. This means that 52.5% variability of crime rate is explained by density feature.
+
+c) Co-effient estimate of 0.0086 indicates one value increase of density would cause 0.0086 value increase in crime rate.
+
 ### Creating Model with Top 2 Correlated Features
 
 ![2cf](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/2cf.PNG)
+
+Interim Observations:
+
+a) **R-squared value is found to be slightly higher (0.527)** when the variable, 'urban' is coupled with density as predictor variables. But, R Squared always goes up when you add more variables regardless of whether the added variable help in prediction or not.
+
+b) Adjusted R Squared, penalizes for adding more variables. Thus, it can go down when you add variables that don’t contribute. Here note that, **Adjusted R-squared value has gone down from 0.519 to 0.514. Also, the AIC value is increased from -470 to -469** (the smaller the AIC value, the better the model is).
+
+c) It has been noticed that the **p-value of 'density' feature has been increased slightly**.
 
 Thus, **the model has become more less reliable to explain crime rate**, because the feature 'urban' doesnt contribute to prediction. The confusion about the correlation between 'urban' and 'density' variable during EDA step, has been sorted out.
 
@@ -272,6 +288,12 @@ Thus, **the model has become more less reliable to explain crime rate**, because
 
 ![rml4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml4.PNG)
 
+Interim Observations:
+
+a) **Adj. R-squared improved** from 0.825 in all-feature model to 0.830, after removal of 2 features 'urban', 'county'.
+
+b) **AIC value decreased** from -591.3 in all-feature model to -595.2, after removal of 2 features 'urban', 'county'.
+
 Thus, **we have a better model than the all-feature model**. We will try to remove more features and analyze the model indicators.
 
 ![rml5](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml5.PNG)
@@ -280,11 +302,30 @@ Thus, **we have a better model than the all-feature model**. We will try to remo
 
 ![rml7](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml7.PNG)
 
+Interim Observations:
+
+a) **Adj. R-squared of the above model with 8 features dropped is better** than the all-feature model.
+
+b) **AIC value of the above model is better** than the all-feature model.
+
 Thus, **we have a better model than the all-feature model** by removing more features such as 'wmfg', 'prbpris', 'wloc', 'west', 'wtuc'. We will try to remove even more features with p > 0.05 and evaluate using RMSE.
 
 ## Model Evaluation Using Cross Validation & RMSE
 
 We will test the change in RMSE value when the features with p > 0.05 are removed. The features with p > 0.05 are prbconv, mix, wfed, wtrd, wcon & avgsen. We will also check the RMSE values for the features removed in the previous model.
+
+RMSE with None removed = 0.011598193103785095 <br/>
+RMSE with wmfg removed = 0.01136661900197904 <br/>
+RMSE with prbpris removed = 0.011775293806203662 <br/>
+RMSE with wloc removed = 0.011190102338212366 <br/>
+RMSE with west removed = 0.011516684556469887 <br/>
+RMSE with wtuc removed = 0.010807252151383978 <br/>
+RMSE with prbconv removed = 0.011772727414832405 <br/>
+RMSE with mix removed = 0.012039673462990959 <br/>
+RMSE with wfed removed = 0.011975451306453819 <br/>
+RMSE with wtrd removed = 0.010915720261174582 <br/>
+RMSE with wcon removed = 0.011764476830686559 <br/>
+RMSE with avgsen removed = 0.011416545616172611 <br/>
 
 ![rmse](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rmse.PNG)
 
