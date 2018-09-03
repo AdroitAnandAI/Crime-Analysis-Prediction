@@ -343,6 +343,12 @@ The lowest cross validation MSE is for wloc, wtrd, prbconv and wcon. Thus, in ad
 
 ![fm3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm3.PNG)
 
+## Testing the Model on Input Data
+
+![tm1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/tm1.PNG)
+
+![tm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/tm2.PNG)
+
 ## Conclusion
 
 1. The Actual vs Predicted plot is linear. This signifies the prediction is working fine. The input data set is limited. With more data, the plot could be more linear.
