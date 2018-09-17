@@ -347,9 +347,12 @@ The lowest cross validation MSE is for wloc, wtrd, prbconv and wcon. Thus, in ad
 
 ## Testing the Model on Input Data
 
-![tm1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/tm1.PNG)
+<p align="center">
+    <img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/tm1.PNG" width="500" height="300">
+</p>
 
 ![tm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/tm2.PNG)
+
 
 ## Conclusion
 
