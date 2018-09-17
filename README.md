@@ -51,15 +51,13 @@ Data source: https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/mas
 
 4. The zeros for features, west, central and urban are expected, as the data is inherently boolean.
 
-images[src*='#center'] { 
-    display: block; 
-    margin: auto; 
-}
 ## Univariate Analysis
 
 Univariate visualization   provides summary statistics for each field in the raw data set. It is conducted **to find out how much a single feature in the dataset** would be helpful to determine the target feature, here in this case, crime rate.
 
-![uva](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/uva.PNG#center)
+<p align="center">
+    ![uva](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/uva.PNG)
+</p>
 
 ![uvaf1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/uvaf1.PNG)
 
