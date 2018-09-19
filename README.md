@@ -247,7 +247,7 @@ It is found, that **some rows have to be dropped** before doing regression analy
 
 ### The above observations from EDA would be carried forward to help Linear Regression (Part II).
 
-**===============================================================================**
+**==============================================================================**
 
 # Linear Model on North Carolina Crime Rate Dataset (Part II)
 
@@ -279,7 +279,9 @@ Lets evaluate the above observations by building Linear Regression Models, as it
 
 ### Creating Model with Most Correlated Feature
 
-![mcf](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/mcf.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/mcf.PNG">
+</p>
 
 **Interim Observations:**
 
@@ -291,7 +293,9 @@ c) Co-effient estimate of 0.0086 indicates one value increase of density would c
 
 ### Creating Model with Top 2 Correlated Features
 
-![2cf](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/2cf.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/2cf.PNG">
+</p>
 
 **Interim Observations:**
 
@@ -307,23 +311,39 @@ Thus, **the model has become more less reliable to explain crime rate**, because
 
 ## Multiple Linear Regression: Model with all Features
 
-![ml1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml1.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml1.PNG">
+</p>
 
-![ml2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml2.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml2.PNG">
+</p>
 
-![ml3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml3.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml3.PNG">
+</p>
 
-![ml4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml4.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/ml4.PNG">
+</p>
 
 ## Removing features from all-feature Model
 
-![rml1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml1.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml1.PNG">
+</p>
 
-![rml2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml2.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml2.PNG">
+</p>
 
-![rml3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml3.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml3.PNG">
+</p>
 
-![rml4](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml4.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml4.PNG">
+</p>
 
 **Interim Observations:**
 
@@ -333,11 +353,17 @@ b) **AIC value decreased** from -591.3 in all-feature model to -595.2, after rem
 
 Thus, **we have a better model than the all-feature model**. We will try to remove more features and analyze the model indicators.
 
-![rml5](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml5.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml5.PNG">
+</p>
 
-![rml6](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml6.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml6.PNG">
+</p>
 
-![rml7](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml7.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rml7.PNG">
+</p>
 
 **Interim Observations:**
 
@@ -364,9 +390,13 @@ RMSE with wtrd removed = 0.010915720261174582 <br/>
 RMSE with wcon removed = 0.011764476830686559 <br/>
 RMSE with avgsen removed = 0.011416545616172611 <br/>
 
-![rmse](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rmse.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/rmse.PNG">
+</p>
 
-![cv](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/cv.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/cv.PNG">
+</p>
 
 From the bar chart, the RMSE values performs better than 'None' when wtuc, wtrd, wloc, west, wmfg and avgsen are removed. Thus, in addition to the previous model, **wtrd & avgsen features are removed**. But the R-squared and AIC figures degrade when both the features are removed. Since wtrd has a higher p value, **we will remove wtrd in our model**.
 
@@ -374,11 +404,17 @@ The lowest cross validation MSE is for wloc, wtrd, prbconv and wcon. Thus, in ad
 
 ## OLS Regression Characteristic of Final Model
 
-![fm1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm1.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm1.PNG">
+</p>
 
-![fm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm2.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm2.PNG">
+</p>
 
-![fm3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm3.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm3.PNG">
+</p>
 
 ## Testing the Model on Input Data
 
@@ -386,7 +422,9 @@ The lowest cross validation MSE is for wloc, wtrd, prbconv and wcon. Thus, in ad
     <img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/tm1.PNG" width="500" height="300">
 </p>
 
-![tm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/tm2.PNG)
+<p align="center">    
+	<img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/tm2.PNG">
+</p>
 
 
 ## Conclusion
