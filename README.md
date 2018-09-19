@@ -194,25 +194,23 @@ _c) Wage columns, wfed & wtrd are positively correlated to ’density’ feature
 
 ### Data Analysis and Cleaning
 
-It is found, that **some rows have to be dropped** before doing regression analysis. The **special character error in the input dataset is also fixed**.
+It is found, that **some rows have to be dropped** before doing regression analysis. The probability values of some rows are found to be > 1 and location of one row was found to be both ’west’ and ’central’, at the same time. We will drop these rows before building the model. The **special character error in the input dataset is also fixed**.
 
 ### Univariate Analysis
 
 1. The features **density, mix, police per capita, probability of conviction and tax revenue per capita seems to have similar distribution as crime rate**. But no definitive conclusion can be made from this observation. 
 
-2. One **strange observation is in weekly wages of service industry (wser).** More than 95% of wages lies below 400, but the maximum wage is around 2250.
+2. One **strange observation is in weekly wages of service industry (wser).** More than 95% of wages lies below 400, but the maximum wage is around 2250. <br/> <br/> From the data, this is identified to be **county 185**. As the percentage of minorities in this county is high (nearly 65%) and wages in other sectors are comparatively less, the wages of service industry is mostly an error. We will remove **"county 185"** from the input data.
 
-3. From the data, this is identified to be **county 185**. As the percentage of minorities in this county is high (nearly 65%) and wages in other sectors are comparatively less, the wages of service industry is mostly an error. We will remove **"county 185"** from the input data.
+3. Though the maximum value of tax revenue per capita is 120, more than 50% of values lies below 40.
 
-4. Though the maximum value of tax revenue per capita is 120, more than 50% of values lies below 40.
-
-5. Though the maximum value of police per capita is 0.009, more than 60% of values lies below 0.001.
+4. Though the maximum value of police per capita is 0.009, more than 60% of values lies below 0.001.
 
 ### Bivariate Analysis
 
 1. Based on the above pairplot, it can be noted that **density is most positively correlated with crime rate. There is also some correlation with weekly wages under different domains but it needs further investigation, as they are not so pronounced.**
 
-2. Strangely, the **weekly wage features and crime rate is found to be slightly positively correlated. This signifies unequal distribution of income** or probability high unemployment rate. One of the most important features that is not in the given data is unemployment rate.
+2. Strangely, the **weekly wage features and crime rate is found to be slightly positively correlated. This signifies unequal distribution of income** or probability of high unemployment rate. One of the most important features that is not in the given data is unemployment rate.
 
 ### Correlation among features for each boolean feature
 
