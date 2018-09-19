@@ -52,7 +52,6 @@ Data source: https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/mas
 4. The zeros for features, west, central and urban are expected, as the data is inherently boolean.
 
 _**Observations**_<br/><br/>
-
 _**From above analysis, it is found, that some rows have to be dropped before doing regression analysis. The probability values of some rows are found to be > 1 and location of one row was found to be both ’west’ and ’central’ at the same time. We will drop these rows before building the model. The special character error in the input dataset is also fixed.**_
 
 ## Univariate Analysis
