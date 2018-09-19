@@ -51,7 +51,7 @@ Data source: https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/mas
 
 4. The zeros for features, west, central and urban are expected, as the data is inherently boolean.
 
-_**Observations**_<br/>
+_**Observations**_<br/><br/>
 
 _**From above analysis, it is found, that some rows have to be dropped before doing regression analysis. The probability values of some rows are found to be > 1 and location of one row was found to be both ’west’ and ’central’ at the same time. We will drop these rows before building the model. The special character error in the input dataset is also fixed.**_
 
@@ -69,7 +69,7 @@ Univariate visualization   provides summary statistics for each field in the
 
 ![uvaf3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/uvaf3.PNG)
 
-_**Observation:<br/>
+_**Observation:<br/><br/>
 The features density, mix, police per capita, probability of conviction and tax revenue per capita seems to have similar distribution as crime rate. But no definitive conclusion can be made from this observation. Lets examine further using bivariate analysis.**_
 
 ## Probability/ Cumulative Distribution Function (CDF)
@@ -167,9 +167,9 @@ Let's do the box plot & violin plot for the boolean features 'west', 'central', 
 
 ![vp](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/vp.PNG)
 
-_**Observations:**_ <br/>
-_a) The crime rate in urban areas is found to be significantly high. Thus, the feature ’urban’ is an useful variable for prediction._<br/>
-_b) The crime rate in west is found to be less and central moderate. But as there is significant overlap, such variations may not be very helpful for prediction._<br/>
+_**Observations:**_ <br/><br/>
+_a) The crime rate in urban areas is found to be significantly high. Thus, the feature ’urban’ is an useful variable for prediction._<br/><br/>
+_b) The crime rate in west is found to be less and central moderate. But as there is significant overlap, such variations may not be very helpful for prediction._<br/><br/>
 
 ## Feature-Feature Correlation Analysis
 
