@@ -51,7 +51,7 @@ Data source: https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/mas
 
 4. The zeros for features, west, central and urban are expected, as the data is inherently boolean.
 
-_**Observations**_
+_**Observations**_<br/>
 
 _**From above analysis, it is found, that some rows have to be dropped before doing regression analysis. The probability values of some rows are found to be > 1 and location of one row was found to be both ’west’ and ’central’ at the same time. We will drop these rows before building the model. The special character error in the input dataset is also fixed.**_
 
@@ -69,7 +69,7 @@ Univariate visualization   provides summary statistics for each field in the
 
 ![uvaf3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/uvaf3.PNG)
 
-_**Observation:
+_**Observation:<br/>
 The features density, mix, police per capita, probability of conviction and tax revenue per capita seems to have similar distribution as crime rate. But no definitive conclusion can be made from this observation. Lets examine further using bivariate analysis.**_
 
 ## Probability/ Cumulative Distribution Function (CDF)
@@ -78,9 +78,9 @@ The features density, mix, police per capita, probability of conviction and tax 
 
 ![cdf2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/cdf2.PNG)
 
-_**Observations:**_<br/>
-_a) One **strange observation is in weekly wages of service industry (wser)**. More than 95% of wages lies below 400, but the maximum wage is around 2250. From the data, this is identified to be **county 185**. As the percentage of minorities in this county is high (nearly 65%) and wages in other sectors are comparatively less, the wages of service industry is mostly an error. We will remove **"county 185" from the input data**._ <br/>
-_b) Though the maximum value of tax revenue per capita is 120, more than 50% of values lies below 40._<br/>
+_**Observations:**_<br/><br/>
+_a) One **strange observation is in weekly wages of service industry (wser)**. More than 95% of wages lies below 400, but the maximum wage is around 2250. From the data, this is identified to be **county 185**. As the percentage of minorities in this county is high (nearly 65%) and wages in other sectors are comparatively less, the wages of service industry is mostly an error. We will remove **"county 185" from the input data**._ <br/><br/>
+_b) Though the maximum value of tax revenue per capita is 120, more than 50% of values lies below 40._<br/><br/>
 _c) Though the maximum value of police per capita is 0.009, more than 60% of values lies below 0.001._
 
 ## Bivariate Analysis
@@ -91,9 +91,9 @@ Bivariate visualization is performed to find the relationship between each var
 
 ![biv2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/biv2.PNG)
 
-_**Observations:**_ <br/>
-_a) Based on the above pairplot, it can be noted that **density is most positively correlated with crime rate. There is also some correlation with weekly wages under different domains but it needs further investigation, as they are not so pronounced.**_ <br/>
-_b) Strangely, the **weekly wage features and crime rate is found to be slightly positively correlated. This signifies unequal distribution of income** or probably high unemployment rate. One of the most important features that is not in the given data may be unemployment rate._ <br/>
+_**Observations:**_ <br/><br/>
+_a) Based on the above pairplot, it can be noted that **density is most positively correlated with crime rate. There is also some correlation with weekly wages under different domains but it needs further investigation, as they are not so pronounced.**_ <br/><br/>
+_b) Strangely, the **weekly wage features and crime rate is found to be slightly positively correlated. This signifies unequal distribution of income** or probably high unemployment rate. One of the most important features that is not in the given data may be unemployment rate._ <br/><br/>
 
 _**Lets try to find if there is any correlation among features for each location: ’west’, ’central’ & ’urban’.**_
 
@@ -141,13 +141,13 @@ Number of data points in category: urban is 8
 
 ![fcpu5](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fcpu5.PNG)
 
-_**Observations:**_ <br/>
-_1) Some of the correlation lines are showing upward or downward trends more than before._<br/>
-_2) **Probability of conviction is found to have negative correlation with crime rate in both west and central, but not in urban areas.**_<br/>
-_3) **Tax Per capita is found to have positive correlation with crime rate in both central and urban areas**._<br/>
-_4) **Percentage of minority is positively correlated with crime rate, both in west and in urban areas**._<br/>
-_5) Thus, a combination of density and location (urban/ west/ central) might help aid crime rate prediction._<br/>
-_6) However, there seems to be **not much data for ’urban areas’** to arrive at a conclusion._<br/>
+_**Observations:**_ <br/><br/>
+_1) Some of the correlation lines are showing upward or downward trends more than before._<br/><br/>
+_2) **Probability of conviction is found to have negative correlation with crime rate in both west and central, but not in urban areas.**_<br/><br/>
+_3) **Tax Per capita is found to have positive correlation with crime rate in both central and urban areas**._<br/><br/>
+_4) **Percentage of minority is positively correlated with crime rate, both in west and in urban areas**._<br/><br/>
+_5) Thus, a combination of density and location (urban/ west/ central) might help aid crime rate prediction._<br/><br/>
+_6) However, there seems to be **not much data for ’urban areas’** to arrive at a conclusion._<br/><br/>
 
 ## Linear Regression Fit of Strongly Correlated Features
 
@@ -179,16 +179,16 @@ When a feature is dependent on one or more of the other input features, it leads
 
 ![hm1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/hm1.png)
 
-_**Observations from the Feature HeatMap:**_ <br/>
-_a) The **density and urban variable seems to be highly correlated**, which is obvious, because urban areas are densely populated._<br/>
-_b) **Some of the "wage features" are positively correlated**, as the wage increase/ decrease in one domain would certainly influence the other. For example, **wtrd & wfir are positively correlated to wfed & wloc. Also, wfir and wtrd have moderate correlation.**_<br/>
+_**Observations from the Feature HeatMap:**_ <br/><br/>
+_a) The **density and urban variable seems to be highly correlated**, which is obvious, because urban areas are densely populated._<br/><br/>
+_b) **Some of the "wage features" are positively correlated**, as the wage increase/ decrease in one domain would certainly influence the other. For example, **wtrd & wfir are positively correlated to wfed & wloc. Also, wfir and wtrd have moderate correlation.**_<br/><br/>
 
 ![hm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/hm2.png)
 
-_**Observations from Zoomed Feature HeatMap:**_<br/>
-_a) Density and crime rate have a correlation of 0.73. But **density has high correlation with ’urban’ feature. Hence, whether both features, density and urban, are useful to predict crime rate needs further investigation. We wll use linear regression to sort out this question**._<br/>
-_b) The feature, ’urban’ has a correlation of 0.62 with crime rate, but whether the correlation is because ’urban’ has very high correlation with ’density’ is yet to be known._ <br/>
-_c) Wage columns, wfed & wtrd are positively correlated to ’density’ feature. This can be intuitively understood as the weekly wages would be higher in urban areas._<br/>
+_**Observations from Zoomed Feature HeatMap:**_<br/><br/>
+_a) Density and crime rate have a correlation of 0.73. But **density has high correlation with ’urban’ feature. Hence, whether both features, density and urban, are useful to predict crime rate needs further investigation. We wll use linear regression to sort out this question**._<br/><br/>
+_b) The feature, ’urban’ has a correlation of 0.62 with crime rate, but whether the correlation is because ’urban’ has very high correlation with ’density’ is yet to be known._ <br/><br/>
+_c) Wage columns, wfed & wtrd are positively correlated to ’density’ feature. This can be intuitively understood as the weekly wages would be higher in urban areas._<br/><br/>
 
 ## Conclusions
 
