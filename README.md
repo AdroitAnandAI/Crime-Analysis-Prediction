@@ -167,6 +167,10 @@ Let's do the box plot & violin plot for the boolean features 'west', 'central', 
 
 ![vp](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/vp.PNG)
 
+_**Observations:**_ <br/>
+_a) The crime rate in urban areas is found to be significantly high. Thus, the feature ’urban’ is an useful variable for prediction._<br/>
+_b) The crime rate in west is found to be less and central moderate. But as there is significant overlap, such variations may not be very helpful for prediction._<br/>
+
 ## Feature-Feature Correlation Analysis
 
 Many times, more than one input could be dependent on each other. In Linear Regression, the requirement is that all the input variables are independent of each other.
@@ -175,7 +179,16 @@ When a feature is dependent on one or more of the other input features, it leads
 
 ![hm1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/hm1.png)
 
+_**Observations from the Feature HeatMap:**_ <br/>
+_a) The **density and urban variable seems to be highly correlated**, which is obvious, because urban areas are densely populated._<br/>
+_b) **Some of the "wage features" are positively correlated**, as the wage increase/ decrease in one domain would certainly influence the other. For example, **wtrd & wfir are positively correlated to wfed & wloc. Also, wfir and wtrd have moderate correlation.**_<br/>
+
 ![hm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/hm2.png)
+
+_**Observations from Zoomed Feature HeatMap:**_<br/>
+_a) Density and crime rate have a correlation of 0.73. But **density has high correlation with ’urban’ feature. Hence, whether both features, density and urban, are useful to predict crime rate needs further investigation. We wll use linear regression to sort out this question**._<br/>
+_b) The feature, ’urban’ has a correlation of 0.62 with crime rate, but whether the correlation is because ’urban’ has very high correlation with ’density’ is yet to be known._ <br/>
+_c) Wage columns, wfed & wtrd are positively correlated to ’density’ feature. This can be intuitively understood as the weekly wages would be higher in urban areas._<br/>
 
 ## Conclusions
 
