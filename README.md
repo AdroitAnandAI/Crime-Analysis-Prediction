@@ -43,13 +43,17 @@ Data source: https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/mas
 
 ## Data Analysis & Data Cleaning
 
-1. **The last row was getting read as 'object' data. It was found to be due to the special symbol at the last row, last column 0.074198931'**. Removed the special symbol from input csv file, to fix it.
+1. **The last column was getting read as 'object' data. It was found to be due to the special symbol at the last row, last column 0.074198931'**. Removed the special symbol from input csv file, to fix it.
 
 2. It is to be noted that the **maximum value of probability features, prbarr & prbconv, are > 1** which is a data anomaly. prbpris & pctymle are found to be < 1.
 
 3. There are 91 entries for all the 25 columns. Hence, there is **no missing value in the input dataset. Thus, no need to do data imputation** or to drop any feature.
 
 4. The zeros for features, west, central and urban are expected, as the data is inherently boolean.
+
+_**Observations**_
+
+_**From above analysis, it is found, that some rows have to be dropped before doing regression analysis. The probability values of some rows are found to be > 1 and location of one row was found to be both ’west’ and ’central’ at the same time. We will drop these rows before building the model. The special character error in the input dataset is also fixed.**_
 
 ## Univariate Analysis
 
