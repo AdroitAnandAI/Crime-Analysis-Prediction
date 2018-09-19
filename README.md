@@ -55,7 +55,9 @@ Data source: https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/mas
 
 Univariate visualization   provides summary statistics for each field in the raw data set. It is conducted **to find out how much a single feature in the dataset** would be helpful to determine the target feature, here in this case, crime rate.
 
-![uva](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/uva.PNG)
+<p align="center">
+    <img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/uva.PNG">
+</p>
 
 ![uvaf1](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/uvaf1.PNG)
 
@@ -342,6 +344,15 @@ The lowest cross validation MSE is for wloc, wtrd, prbconv and wcon. Thus, in ad
 ![fm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm2.PNG)
 
 ![fm3](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/fm3.PNG)
+
+## Testing the Model on Input Data
+
+<p align="center">
+    <img src="https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/tm1.PNG" width="500" height="300">
+</p>
+
+![tm2](https://github.com/AdroitAnandAI/Crime-Analysis-Prediction/blob/master/images/tm2.PNG)
+
 
 ## Conclusion
 
